@@ -1,6 +1,6 @@
-# Renaissance Contract Deployment System
+# LumenSignal Contract Deployment System
 
-This directory contains the deployment infrastructure for Renaissance Soroban smart contracts. The system provides deterministic, repeatable, and safe contract deployments with comprehensive verification and rollback capabilities.
+This directory contains the deployment infrastructure for LumenSignal Soroban smart contracts. The system provides deterministic, repeatable, and safe contract deployments with comprehensive verification and rollback capabilities.
 
 ## Features
 

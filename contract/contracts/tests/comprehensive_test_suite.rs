@@ -897,4 +897,4 @@ mod security_tests {
         assert!(staking_client.get_total_stake(&user1) >= 10000);
     }
 }</content>
-<parameter name="filePath">c:\Users\u-adamu\Desktop\wave 2\Renaissance-api\contract\contracts\tests\comprehensive_test_suite.rs
+<parameter name="filePath">c:\Users\u-adamu\Desktop\wave 2\LumenSignal-Backend\contract\contracts\tests\comprehensive_test_suite.rs

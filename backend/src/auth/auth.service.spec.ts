@@ -220,4 +220,4 @@ describe('AuthService', () => {
     });
   });
 });</content>
-<parameter name="filePath">c:\Users\u-adamu\Desktop\wave 2\Renaissance-api\backend\src\auth\auth.service.spec.ts
+<parameter name="filePath">c:\Users\u-adamu\Desktop\wave 2\LumenSignal-Backend\backend\src\auth\auth.service.spec.ts

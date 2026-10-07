@@ -1,6 +1,6 @@
 # Ownership Guard
 
-A reusable, configurable guard that enforces ownership-based authorization for user-owned resources in the Renaissance API.
+A reusable, configurable guard that enforces ownership-based authorization for user-owned resources in the LumenSignal Backend.
 
 ## Purpose
 

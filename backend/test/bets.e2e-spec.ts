@@ -568,4 +568,4 @@ describe('Bets (e2e)', () => {
     });
   });
 });</content>
-<parameter name="filePath">c:\Users\u-adamu\Desktop\wave 2\Renaissance-api\backend\test\bets.e2e-spec.ts
+<parameter name="filePath">c:\Users\u-adamu\Desktop\wave 2\LumenSignal-Backend\backend\test\bets.e2e-spec.ts

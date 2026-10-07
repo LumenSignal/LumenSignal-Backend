@@ -1,5 +1,5 @@
 #!/bin/bash
-# Deployment script for Renaissance Soroban smart contracts
+# Deployment script for LumenSignal Soroban smart contracts
 # Provides deterministic, repeatable and safe contract deployments
 
 set -e  # Exit on any error
@@ -275,7 +275,7 @@ print_summary() {
 
 # Main execution
 main() {
-    print_status "Renaissance Contract Deployment Script"
+    print_status "LumenSignal Contract Deployment Script"
     print_status "====================================="
     
     # Parse command line arguments

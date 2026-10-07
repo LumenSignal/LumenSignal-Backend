@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes the architecture of Renaissance’s Soroban smart contract system. It explains:
+This document describes the architecture of LumenSignal’s Soroban smart contract system. It explains:
 
 - Contract structure and responsibilities
 - Storage layout patterns
@@ -17,7 +17,7 @@ This documentation serves as the canonical reference for contributors working on
 
 # 1. Contract System Overview
 
-Renaissance uses Soroban smart contracts deployed on the Stellar network. Contracts are modular and follow a separation-of-concerns architecture.
+LumenSignal uses Soroban smart contracts deployed on the Stellar network. Contracts are modular and follow a separation-of-concerns architecture.
 
 ## Core Contracts
 
@@ -62,7 +62,7 @@ Each contract is deployed independently and interacts via defined interfaces.
 
 # 2. Storage Layout Patterns
 
-Soroban uses key-value storage. Renaissance follows structured and predictable storage patterns.
+Soroban uses key-value storage. LumenSignal follows structured and predictable storage patterns.
 
 ## Storage Key Design
 
@@ -369,7 +369,7 @@ Each contract must include:
 
 # Summary
 
-The Renaissance Soroban architecture is designed to be:
+The LumenSignal Soroban architecture is designed to be:
 
 - Modular
 - Secure

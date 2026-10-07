@@ -1,7 +1,7 @@
 # Implementation Summary: Treasury, Solvency, WebSocket & Redis Features
 
 ## Overview
-This document summarizes the implementation of 4 major features for the Renaissance platform:
+This document summarizes the implementation of 4 major features for the LumenSignal platform:
 1. Treasury Prize Distribution System
 2. On-Chain Solvency Proof System
 3. Real-Time WebSocket Leaderboard Gateway

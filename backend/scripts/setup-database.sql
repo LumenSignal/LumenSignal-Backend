@@ -1,12 +1,12 @@
--- Renaissance API Database Setup Script
+-- LumenSignal Backend Database Setup Script
 -- This script creates the database and sets up the initial schema
 
 -- Create database (if it doesn't exist)
 -- Note: This might need to be run with superuser privileges
--- CREATE DATABASE renaissance_api;
+-- CREATE DATABASE lumensignal_backend;
 
 -- Connect to the database
--- \c renaissance_api;
+-- \c lumensignal_backend;
 
 -- Enable UUID extension for primary keys
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -67,7 +67,7 @@ $$ language 'plpgsql';
 -- INSERT INTO users (id, email, password, first_name, last_name, username, role, status, email_verified, created_at, updated_at)
 -- VALUES (
 --     uuid_generate_v4(),
---     'admin@renaissance.com',
+--     'admin@lumensignal.com',
 --     '$2b$10$example.hash.here', -- This should be a proper bcrypt hash
 --     'Admin',
 --     'User',
@@ -87,8 +87,8 @@ $$ language 'plpgsql';
 --     (uuid_generate_v4(), 'Business', 'business', 'Business and entrepreneurship', 'active', 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 -- Grant permissions (adjust as needed)
--- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO renaissance_user;
--- GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO renaissance_user;
+-- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO lumensignal_user;
+-- GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO lumensignal_user;
 
 -- Database setup complete
 -- Run this script once to initialize the database structure

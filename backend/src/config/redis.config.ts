@@ -14,7 +14,7 @@ export const getRedisConfig = (configService: ConfigService): RedisConfig => ({
   port: configService.get<number>('REDIS_PORT', 6379),
   password: configService.get<string>('REDIS_PASSWORD'),
   db: configService.get<number>('REDIS_DB', 0),
-  keyPrefix: configService.get<string>('REDIS_KEY_PREFIX', 'renaissance:'),
+  keyPrefix: configService.get<string>('REDIS_KEY_PREFIX', 'lumensignal:'),
   ttl: configService.get<number>('REDIS_TTL', 3600),
 });
 
@@ -24,7 +24,7 @@ export const getRedisCacheStoreConfig = (configService: ConfigService) => ({
   port: configService.get<number>('REDIS_PORT', 6379),
   password: configService.get<string>('REDIS_PASSWORD'),
   db: configService.get<number>('REDIS_DB', 0),
-  keyPrefix: configService.get<string>('REDIS_KEY_PREFIX', 'renaissance:'),
+  keyPrefix: configService.get<string>('REDIS_KEY_PREFIX', 'lumensignal:'),
   ttl: configService.get<number>('REDIS_TTL', 3600),
   max: configService.get<number>('REDIS_CACHE_MAX', 1000),
 });

@@ -59,9 +59,9 @@ async function bootstrap() {
 
   // Swagger Documentation Setup
   const config = new DocumentBuilder()
-    .setTitle('Renaissance API')
+    .setTitle('LumenSignal Backend')
     .setDescription(
-      'API documentation for the Renaissance platform - a fantasy sports card marketplace',
+      'API documentation for the LumenSignal platform - a fantasy sports card marketplace',
     )
     .setVersion('1.0')
     .addBearerAuth(

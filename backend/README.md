@@ -1,4 +1,4 @@
-# Renaissance Backend
+# LumenSignal Backend
 
 ## API Documentation
 

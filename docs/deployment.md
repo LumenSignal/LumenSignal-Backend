@@ -1,6 +1,6 @@
 Production Deployment Guide
 
-This document explains how to deploy the Renaissance API backend to production, including environment configuration, database migrations, smart contract setup, and security practices.
+This document explains how to deploy the LumenSignal Backend backend to production, including environment configuration, database migrations, smart contract setup, and security practices.
 
 The platform integrates a Web2 backend with the Stellar Development Foundation ecosystem for blockchain-based betting and rewards.
 
@@ -13,7 +13,7 @@ Create a .env file (never commit this file):
 NODE_ENV=production
 PORT=4000
 
-DATABASE_URL=postgresql://username:password@host:5432/renaissance
+DATABASE_URL=postgresql://username:password@host:5432/lumensignal
 
 REDIS_URL=redis://localhost:6379
 
@@ -100,8 +100,8 @@ npm run start:prod
 
 Or with Docker:
 
-docker build -t renaissance-api .
-docker run -p 4000:4000 renaissance-api
+docker build -t lumensignal-backend .
+docker run -p 4000:4000 lumensignal-backend
 8. CI/CD Deployment Flow (Recommended)
 
 Example pipeline steps:

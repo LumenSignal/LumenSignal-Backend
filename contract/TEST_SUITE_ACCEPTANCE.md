@@ -1,7 +1,7 @@
 # Soroban Smart Contract Test Suite - Acceptance Criteria
 
 ## Overview
-This document outlines the comprehensive test suite created for all Soroban smart contracts in the Renaissance platform. The test suite ensures reliability, security, and proper functionality across all contract operations.
+This document outlines the comprehensive test suite created for all Soroban smart contracts in the LumenSignal platform. The test suite ensures reliability, security, and proper functionality across all contract operations.
 
 ## Test Suite Structure
 

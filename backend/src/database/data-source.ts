@@ -16,7 +16,7 @@ export const AppDataSource = new DataSource({
   port: parseInt(process.env.DB_PORT || '5432', 10),
   username: process.env.DB_USERNAME || 'postgres',
   password: process.env.DB_PASSWORD || 'password',
-  database: process.env.DB_DATABASE || 'renaissance_api',
+  database: process.env.DB_DATABASE || 'lumensignal_backend',
   // Entity path patterns for auto-discovery
   entities: [path.join(__dirname, '/../**/*.entity{.ts,.js}')],
   // Migration patterns - matches numbered migration files

@@ -65,7 +65,7 @@ export class NotificationService {
 
     try {
       const mailOptions = {
-        from: process.env.SMTP_FROM || '"Renaissance Platform" <noreply@renaissance.com>',
+        from: process.env.SMTP_FROM || '"LumenSignal Platform" <noreply@lumensignal.com>',
         to: options.to,
         subject: options.subject,
         text: options.text,
@@ -101,9 +101,9 @@ export class NotificationService {
   ): Promise<{ success: boolean; messageId?: string; error?: string }> {
     const templates = {
       welcome: {
-        subject: 'Welcome to Renaissance Platform!',
+        subject: 'Welcome to LumenSignal Platform!',
         html: `
-          <h1>Welcome to Renaissance!</h1>
+          <h1>Welcome to LumenSignal!</h1>
           <p>Dear ${data.name || 'User'},</p>
           <p>Thank you for joining our platform. We're excited to have you on board!</p>
           <p>Get started by:</p>
@@ -112,9 +112,9 @@ export class NotificationService {
             <li>Exploring available bets</li>
             <li>Completing your profile</li>
           </ul>
-          <p>Best regards,<br>The Renaissance Team</p>
+          <p>Best regards,<br>The LumenSignal Team</p>
         `,
-        text: `Welcome to Renaissance! Thank you for joining our platform.`,
+        text: `Welcome to LumenSignal! Thank you for joining our platform.`,
       },
       achievement: {
         subject: '🏆 Achievement Unlocked!',

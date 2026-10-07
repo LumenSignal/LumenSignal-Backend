@@ -1,4 +1,4 @@
-# Deployment Makefile for Renaissance Soroban Smart Contracts
+# Deployment Makefile for LumenSignal Soroban Smart Contracts
 # Provides deterministic, repeatable and safe contract deployment
 
 # Default configuration
@@ -190,7 +190,7 @@ export PASSPHRASE
 # Help target
 .PHONY: help
 help:
-	@echo "Renaissance Contract Deployment Makefile"
+	@echo "LumenSignal Contract Deployment Makefile"
 	@echo "======================================"
 	@echo "Usage: make [TARGET]"
 	@echo ""

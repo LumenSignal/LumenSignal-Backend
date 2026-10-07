@@ -1,4 +1,4 @@
-# PowerShell Deployment script for Renaissance Soroban smart contracts
+# PowerShell Deployment script for LumenSignal Soroban smart contracts
 # Provides deterministic, repeatable and safe contract deployments
 
 param(
@@ -418,7 +418,7 @@ if ($Help) {
     exit 0
 }
 
-Write-Status "Renaissance Contract Deployment Script"
+Write-Status "LumenSignal Contract Deployment Script"
 Write-Host "====================================="
 
 # Validate environment

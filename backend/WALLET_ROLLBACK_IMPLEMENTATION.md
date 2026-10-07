@@ -1,6 +1,6 @@
 # Wallet Rollback Service Implementation
 
-This document describes the implementation of compensating transactions, atomic multi-step operations, and admin balance adjustments for the Renaissance API wallet system.
+This document describes the implementation of compensating transactions, atomic multi-step operations, and admin balance adjustments for the LumenSignal Backend wallet system.
 
 ## Overview
 

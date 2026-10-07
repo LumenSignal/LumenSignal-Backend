@@ -63,7 +63,7 @@ export class NotificationDeliveryService {
       const fromEmail =
         this.configService.get<string>('SMTP_FROM') ||
         this.configService.get<string>('SMTP_USER') ||
-        'no-reply@renaissance.local';
+        'no-reply@lumensignal.local';
 
       await this.mailTransporter.sendMail({
         from: fromEmail,

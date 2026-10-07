@@ -11,7 +11,7 @@ members = [
   "contracts/treasury",
   "contracts/team_governance",
   "contracts/tests",
-  "contracts/renaissance_spin_to_win",
+  "contracts/lumensignal_spin_to_win",
   "contracts/leaderboard_prediction",
 ]
 

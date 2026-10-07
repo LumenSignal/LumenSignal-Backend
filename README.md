@@ -1,9 +1,9 @@
 endeavor to join the telegram group before you apply for issues 
 https://t.me/+7CVopkI8kO85MWY0
 
-# Renaissance-api
+# LumenSignal-Backend
 
-Renaissance is a Web3-powered football fan engagement platform built on the **Stellar blockchain**, designed to redefine how fans follow teams, engage with football stars, and participate in transparent sports betting.
+LumenSignal is a Web3-powered football fan engagement platform built on the **Stellar blockchain**, designed to redefine how fans follow teams, engage with football stars, and participate in transparent sports betting.
 
 This repository contains the **backend services** that power user management, live football data ingestion, betting orchestration, premium content access, and integration with **Stellar Soroban smart contracts**.
 
@@ -11,7 +11,7 @@ This repository contains the **backend services** that power user management, li
 
 ## 🚀 Project Overview
 
-The Renaissance backend acts as the **core orchestration layer** between:
+The LumenSignal backend acts as the **core orchestration layer** between:
 - A high-performance **Web2 infrastructure** (for live scores, content, and scalability)
 - A **Web3 blockchain layer on Stellar** (for trustless betting, ownership, and rewards)
 

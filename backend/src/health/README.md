@@ -1,6 +1,6 @@
 # Health Check Module
 
-This module provides health and readiness probes for the Renaissance API, essential for production deployments and monitoring.
+This module provides health and readiness probes for the LumenSignal Backend, essential for production deployments and monitoring.
 
 ## Endpoint
 

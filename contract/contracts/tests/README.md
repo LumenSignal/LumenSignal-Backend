@@ -1,6 +1,6 @@
 # Soroban Smart Contract Test Suite
 
-This directory contains a comprehensive test suite for all Soroban smart contracts in the Renaissance platform.
+This directory contains a comprehensive test suite for all Soroban smart contracts in the LumenSignal platform.
 
 ## Test Structure
 

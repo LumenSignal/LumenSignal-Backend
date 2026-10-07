@@ -1,6 +1,6 @@
-# Renaissance Soroban Smart Contracts
+# LumenSignal Soroban Smart Contracts
 
-This directory contains the Soroban smart contracts for the Renaissance betting platform.
+This directory contains the Soroban smart contracts for the LumenSignal betting platform.
 
 ## 📁 Project Structure
 

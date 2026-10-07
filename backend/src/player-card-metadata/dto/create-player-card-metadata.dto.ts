@@ -131,7 +131,7 @@ export class CreatePlayerCardMetadataDto {
 
   @ApiPropertyOptional({
     description: 'External URL for more information',
-    example: 'https://renaissance.io/cards/lebron-james-001',
+    example: 'https://lumensignal.io/cards/lebron-james-001',
   })
   @IsOptional()
   @IsString()
@@ -243,7 +243,7 @@ export class UpdatePlayerCardMetadataDto {
 
   @ApiPropertyOptional({
     description: 'External URL for more information',
-    example: 'https://renaissance.io/cards/lebron-james-001',
+    example: 'https://lumensignal.io/cards/lebron-james-001',
   })
   @IsOptional()
   @IsString()
