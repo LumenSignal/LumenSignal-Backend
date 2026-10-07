@@ -7,7 +7,7 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-soroban-sdk = "23"
+soroban-sdk = { workspace = true }
 
 [dependencies.staking]
 path = "../staking"
@@ -27,7 +27,7 @@ path = "../treasury"
 [dependencies.nft_player_cards]
 path = "../nft_player_cards"
 
-[dependencies.spin_rewards]
+[dependencies.spin-rewards]
 path = "../spin_rewards"
 
 [dependencies.team_governance]
@@ -37,4 +37,4 @@ path = "../team_governance"
 path = "../common"
 
 [dev-dependencies]
-soroban-sdk = { version = "23", features = ["testutils"] }
+soroban-sdk = { workspace = true, features = ["testutils"] }

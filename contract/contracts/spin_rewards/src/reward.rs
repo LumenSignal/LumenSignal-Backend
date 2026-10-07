@@ -1,4 +1,4 @@
-use soroban_sdk::{Env, Address};
+use soroban_sdk::{Env, Address, IntoVal};
 use crate::storage::{DataKey, RewardConfig};
 use crate::errors::RewardError;
 use crate::events;
@@ -34,10 +34,10 @@ pub fn distribute_xlm(
     }
 
     // Transfer native XLM
-    env.invoke_contract(
+    env.invoke_contract::<()>(
         &env.current_contract_address(),
-        &symbol_short!("transfer"),
-        (user.clone(), amount)
+        &soroban_sdk::symbol_short!("transfer"),
+        soroban_sdk::vec![env, user.clone().into_val(env), amount.into_val(env)],
     );
 
     env.storage().instance().set(&DataKey::PoolBalance, &(pool - amount));

@@ -9,7 +9,7 @@ pub fn fixed_stake_event(env: &Env, user: &Address, amount: i128, duration: u64)
 
 pub fn fixed_unstake_event(env: &Env, user: &Address, reward: i128) {
     env.events().publish(
-        (symbol_short!("fx_unstake"), user),
+        (symbol_short!("fx_unstk"), user),
         reward,
     );
 }

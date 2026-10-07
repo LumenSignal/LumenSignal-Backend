@@ -3,7 +3,7 @@
 use soroban_sdk::{
     contract, contractimpl, contracttype, symbol_short,
     token, vec, Address, Env, Symbol, Vec, Map,
-    log, events,
+    log, events, xdr::ToXdr
 };
 
 // ─── Data Structures ────────────────────────────────────────────────────────
@@ -66,7 +66,7 @@ const HISTORY_KEY: Symbol = symbol_short!("HISTORY");
 fn player_stats_key(env: &Env, player: &Address) -> soroban_sdk::Bytes {
     let mut key = soroban_sdk::Bytes::new(env);
     key.extend_from_slice(b"ps_");
-    key.extend_from_array(&player.to_string().as_bytes());
+    key.append(&player.to_xdr(env));
     key
 }
 
@@ -77,7 +77,7 @@ const EVT_PRIZE: Symbol = symbol_short!("PRIZE");
 const EVT_PRIZE_ADD: Symbol = symbol_short!("PRIZE_ADD");
 const EVT_WITHDRAW: Symbol = symbol_short!("WITHDRAW");
 const EVT_PAUSE: Symbol = symbol_short!("PAUSE");
-const EVT_CONFIG: Symbol = symbol_short!("CONFIG_UPD");
+const EVT_CONFIG: Symbol = symbol_short!("CFG_UPD");
 
 // ─── Contract ────────────────────────────────────────────────────────────────
 
@@ -379,17 +379,17 @@ impl SpinToWin {
         let mut rng = env.prng();
 
         // Mix in player address bytes and spin id for uniqueness
-        let player_str = player.to_string();
-        let player_bytes = player_str.as_bytes();
+        let player_bytes = player.to_xdr(env);
 
         // XOR fold the player bytes into a u64
         let mut player_hash: u64 = 0;
-        for (i, b) in player_bytes.iter().enumerate() {
+        for i in 0..player_bytes.len() {
+            let b = player_bytes.get(i).unwrap();
             player_hash ^= (b as u64).wrapping_shl((i % 8) as u32 * 8);
         }
 
         // Get a random u64 from the PRNG and mix with our additional entropy
-        let base: u64 = rng.u64();
+        let base: u64 = rng.gen::<u64>();
         base
             .wrapping_add(player_hash)
             .wrapping_add(spin_id)

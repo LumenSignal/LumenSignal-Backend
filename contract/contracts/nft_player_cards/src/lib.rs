@@ -35,6 +35,7 @@ pub struct NFTPlayerCards;
 impl NFTPlayerCards {
     pub fn register_player(
         env: Env,
+        owner: Address,
         token_id: BytesN<32>,
         metadata_uri: String,
     ) -> Result<(), ContractError> {
@@ -42,7 +43,7 @@ impl NFTPlayerCards {
             return Err(ContractError::TokenAlreadyExists);
         }
 
-        let owner = env.invoker();
+        owner.require_auth();
         set_owner(&env, &token_id, &owner);
         set_token_uri(&env, &token_id, &metadata_uri);
         emit_event(&env, &token_id, &owner, &metadata_uri, Symbol::short("REGISTER"), None);
@@ -170,7 +171,7 @@ impl NFTPlayerCards {
 
         let mut total_shares: u32 = 0;
         for share in shares.iter() {
-            total_shares = total_shares.saturating_add(*share);
+            total_shares = total_shares.saturating_add(share);
             if total_shares > 10_000 {
                 return Err(ContractError::InvalidRoyaltyConfiguration);
             }
@@ -226,22 +227,22 @@ impl NFTPlayerCards {
         )?;
 
         let seller = get_owner(&env, &token_id).ok_or(ContractError::TokenNotFound)?;
-        let (recipients, shares) = self::get_royalty_info(env.clone(), token_id.clone());
+        let (recipients, shares) = Self::get_royalty_info(env.clone(), token_id.clone());
 
         let token_client = token::Client::new(&env, &payment_token);
         let mut total_royalty_amount: i128 = 0;
         let mut total_shares: u32 = 0;
         for share in shares.iter() {
-            total_shares = total_shares.saturating_add(*share);
+            total_shares = total_shares.saturating_add(share);
             if total_shares > 10_000 {
                 return Err(ContractError::InvalidRoyaltyConfiguration);
             }
         }
 
         for (recipient, share) in recipients.iter().zip(shares.iter()) {
-            let amount = sale_price.saturating_mul(*share as i128) / 10_000;
+            let amount = sale_price.saturating_mul(share as i128) / 10_000;
             if amount > 0 {
-                token_client.transfer(&buyer, recipient, &amount);
+                token_client.transfer(&buyer, &recipient, &amount);
                 total_royalty_amount = total_royalty_amount.saturating_add(amount);
             }
         }
@@ -326,7 +327,7 @@ fn add_token_to_owner(env: &Env, owner: &Address, token_id: &BytesN<32>) {
 fn remove_token_from_owner(env: &Env, owner: &Address, token_id: &BytesN<32>) {
     let key = DataKey::OwnerTokens(owner.clone());
     let mut tokens = get_tokens_of_owner(env, owner.clone());
-    if let Some(index) = tokens.iter().position(|id| id == token_id) {
+    if let Some(index) = tokens.iter().position(|id| id == token_id.clone()) {
         tokens.remove(index as u32);
         env.storage().instance().set(&key, &tokens);
     }

@@ -45,7 +45,7 @@ pub struct TeamGovernance;
 impl TeamGovernance {
     pub fn initialize(env: Env, admin: Address) {
         if env.storage().instance().has(&DataKey::Admin) {
-            panic!(GovernanceError::AlreadyInitialized);
+            panic!("Already initialized");
         }
         env.storage().instance().set(&DataKey::Admin, &admin);
     }

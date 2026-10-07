@@ -1,0 +1,30 @@
+{
+  "contracts": {
+    "balance_ledger": {
+      "address": "CDYDIQTU7WXGRG3EYPXFSGQTFXKBJKKG5N6RASRXLKGH4VJ735VWV3BG",
+      "hash": "2566a91ec45d25101864540f25bd3b699d3091de7850d30ea6ab33a499a94b5f",
+      "status": "deployed",
+      "timestamp": "2026-10-07T17:39:02Z"
+    },
+    "betting": {
+      "address": "CCLBS2NVHUH46DYDSNUCU2XAWAZ4457L5UMGEX7YRM66BRYKSKPRCKQF",
+      "hash": "de16588f199c451b8e917483c23b9fa11a70ae5d9fd769d512c4c19bfe616f01",
+      "status": "deployed",
+      "timestamp": "2026-10-07T17:39:18Z"
+    },
+    "settlement": {
+      "address": "CBAXOFOV5MG53SMQTSIMZ5EA72BT65DSSHIDY7D47QEC54GH77SSQBVT",
+      "hash": "5b45847dc58b103dc7f2a460a687219e395ed8f8e74c67ea665b1ce186fe3864",
+      "status": "deployed",
+      "timestamp": "2026-10-07T17:39:26Z"
+    },
+    "staking": {
+      "address": "CBELCWYYEFYUFEHFOC2PNSSCV3CH6AKYULB3C5SPGKZRSP4KPA6DVZD5",
+      "hash": "2befaba8f5b6f2b0b532846eb4193626425fa59f0f660e7c638d11e62929451e",
+      "status": "deployed",
+      "timestamp": "2026-10-07T17:39:38Z"
+    }
+  },
+  "network": "testnet",
+  "timestamp": "2026-10-07T17:39:02Z"
+}

@@ -1,6 +1,6 @@
 #![no_std]
 
-use soroban_sdk::{contract, contractimpl, contracttype, Address, Env, Symbol, U256};
+use soroban_sdk::{contract, contractimpl, contracttype, Address, Env, Symbol, U256, IntoVal};
 
 use common::ContractError;
 
@@ -77,34 +77,34 @@ impl SettlementContract {
         // Perform atomic fund updates by invoking balance ledger contract methods.
         if settlement_type == win_sym {
             // Winner must be provided
-            let winner_addr = winner.ok_or(ContractError::InvalidBet)?;
+            let winner_addr = winner.clone().ok_or(ContractError::InvalidBet)?;
 
             // Deduct locked funds from bettor
-            env.invoke_contract(
+            env.invoke_contract::<()>(
                 &bal_contract,
                 &Symbol::new(&env, "apply_delta"),
-                (bettor.clone(), 0i128, -bet_amount),
+                soroban_sdk::vec![&env, bettor.clone().into_val(&env), 0i128.into_val(&env), (-bet_amount).into_val(&env)],
             );
 
             // Credit payout to winner withdrawable
-            env.invoke_contract(
+            env.invoke_contract::<()>(
                 &bal_contract,
                 &Symbol::new(&env, "apply_delta"),
-                (winner_addr.clone(), payout, 0i128),
+                soroban_sdk::vec![&env, winner_addr.clone().into_val(&env), payout.into_val(&env), 0i128.into_val(&env)],
             );
         } else if settlement_type == loss_sym {
             // Remove locked funds from bettor (platform keeps funds)
-            env.invoke_contract(
+            env.invoke_contract::<()>(
                 &bal_contract,
                 &Symbol::new(&env, "apply_delta"),
-                (bettor.clone(), 0i128, -bet_amount),
+                soroban_sdk::vec![&env, bettor.clone().into_val(&env), 0i128.into_val(&env), (-bet_amount).into_val(&env)],
             );
         } else if settlement_type == draw_sym {
             // Refund: move locked funds back to withdrawable
-            env.invoke_contract(
+            env.invoke_contract::<()>(
                 &bal_contract,
                 &Symbol::new(&env, "apply_delta"),
-                (bettor.clone(), bet_amount, -bet_amount),
+                soroban_sdk::vec![&env, bettor.clone().into_val(&env), bet_amount.into_val(&env), (-bet_amount).into_val(&env)],
             );
         } else {
             return Err(ContractError::InvalidStatus);

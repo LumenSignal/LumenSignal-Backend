@@ -120,7 +120,7 @@ impl StakingContract {
 
         // Transfer tokens to contract
         let token_client = token::Client::new(&env, &staking_token);
-        token_client.transfer(&user, env.current_contract_address(), &amount);
+        token_client.transfer(&user, &env.current_contract_address(), &amount);
 
         // Generate stake ID based on user nonce
         let nonce_key = DataKey::StakeNonce(user.clone());

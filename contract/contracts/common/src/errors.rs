@@ -24,4 +24,9 @@ pub enum ContractError {
     BetAlreadyPlaced = 18,
     DuplicateOperation = 19,
     NoRewardsToClaim = 20,
+    NotTokenOwner = 21,
+    TokenNotFound = 22,
+    TokenAlreadyExists = 23,
+    InvalidRoyaltyConfiguration = 24,
+    InvalidSalePrice = 25,
 }
